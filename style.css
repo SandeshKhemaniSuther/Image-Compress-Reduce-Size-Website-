@@ -1,0 +1,185 @@
+body {
+    font-family: sans-serif;
+    background-image: url(./Image/abstract.jpg);
+    color: #333;
+    /* Ensure body fills the viewport and content is centered */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: burlywood;
+    background-size: cover;
+    padding: 40px;
+    border-radius:30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Increased max-width for better desktop utilization */
+    max-width: 1000px; 
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+h2{
+    color: #495057;
+    text-align: center;
+    font-size: medium;
+
+}
+
+.card {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------------ */
+/* CSS GRID FOR IMAGE PREVIEWS (Core Responsiveness)*/
+/* ------------------------------------------------ */
+
+.image-previews {
+    display: grid;
+    /* Two equal columns for desktop/large screens */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.preview-box {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.preview-box img {
+    max-width: 100%;
+    height: auto;
+    /* Removing max-height lets the images fill the vertical space */
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+/* ------------------------------------------------ */
+/* MEDIA QUERY: Stacks images on small screens */
+/* ------------------------------------------------ */
+
+@media (max-width: 768px) {
+    .image-previews {
+        /* Single column for mobile view */
+        grid-template-columns: 1fr; 
+    }
+    .container {
+        /* Reduce padding on mobile */
+        padding: 20px 10px; 
+    }
+    .upload-controls {
+        /* Stack buttons on mobile if they are too wide */
+        flex-direction: column;
+    }
+    .upload-button, .reset-button {
+        width: 100%;
+    }
+}
+
+
+/* ------------------------------------------------ */
+/* DOWNLOAD SECTION (Centered) */
+/* ------------------------------------------------ */
+
+.card.download-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ------------------------------------------------ */
+/* UPLOAD & BUTTON STYLES (Kept consistent) */
+/* ------------------------------------------------ */
+
+.drop-zone {
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.drop-zone.highlight {
+    background-color: #e3f2fd;
+    border-color: #00b395;
+}
+
+.drop-zone h2 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #495057;
+}
+
+.upload-controls {
+    display: flex; 
+    justify-content: center; 
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.upload-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    font-size: larger;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.reset-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: larger;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.file-status {
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 600;
+    color: #6c757d;
+    text-align: center;
+}
+
+#qualityRange {
+    width: 100%;
+    margin: 10px 0;
+}

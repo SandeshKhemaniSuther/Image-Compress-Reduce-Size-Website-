@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quick Image Compressor</h1>
+        <h2>⚠️ Note: Compression reduces file size by reducing image quality (lossy compression).</h2>
+
+        <div class="card upload-section">
+            <div id="dropZone" class="drop-zone">
+                <h2>Drag and drop your image here</h2>
+                <div class="upload-controls">
+                    <label for="imageUpload" class="upload-button">
+                        Upload Image
+                    </label>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    
+                    <button id="resetButton" class="reset-button" style="display: none;">
+                        Remove Image
+                    </button>
+                </div>
+            </div>
+            
+            <p id="fileName" class="file-status">No file selected.</p>
+        </div>
+
+        <div class="card quality-section" id="qualitySection" style="display: none;">
+            <h2>Compression Quality: <span id="qualityValue">80%</span></h2>
+            <input type="range" id="qualityRange" min="10" max="100" value="80">
+            <h2>100 = Highest Quality (Least Compression), 10 = Lowest Quality (Most Compression)</h2>
+        </div>
+
+        <div class="card download-section" id="downloadSection" style="display: none;">
+            <h2>Result</h2>
+            <div class="image-previews">
+                <div class="preview-box">
+                    <h3>Original Image</h3>
+                    <img id="originalImage" alt="Original Image" style="max-width: 100%;">
+                </div>
+                <div class="preview-box">
+                    <h3>Compressed Image</h3>
+                    <img id="compressedImage" alt="Compressed Image" style="max-width: 100%;">
+                </div>
+            </div>
+            <button id="downloadButton" class="download-button">Download Compressed Image</button>
+            <p id="sizeInfo"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
